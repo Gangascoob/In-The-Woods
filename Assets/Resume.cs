@@ -8,10 +8,17 @@ public class Resume : MonoBehaviour
     [SerializeField] private GameObject _menu;
     private bool isMenuOpen = false;
 
+    [SerializeField] private GameObject camera1;
+    [SerializeField] private GameObject camera2;
+
+    private CameraController controller1;
+    private CameraController controller2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller1 = camera1.GetComponent<CameraController>();
+        controller2 = camera2.GetComponent<CameraController>();
     }
 
     // Update is called once per frame
@@ -22,10 +29,14 @@ public class Resume : MonoBehaviour
             if(isMenuOpen == false)
             {
                 OpenMenu();
+                controller1.enabled = false;
+                controller2.enabled = false;
             }
             else if(isMenuOpen == true)
             {
                 CloseMenu();
+                controller1.enabled = true;
+                controller2.enabled = true;
             }
             
         }
