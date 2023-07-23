@@ -28,8 +28,10 @@ public class Play : MonoBehaviour
     {
         _credits.SetActive(false);
         loadingScreen.SetActive(true);
-        StartCoroutine(LoadMainSceneAsync());
 
+        //StartCoroutine(LoadMainSceneAsync());
+
+        SceneManager.LoadScene(mainSceneName);
     }
 
     private IEnumerator LoadMainSceneAsync()
