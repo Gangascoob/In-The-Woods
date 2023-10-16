@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        _map = GameObject.Find("Controller").GetComponent<MapFinder>().mapReturn();
     }
 
     // Update is called once per frame
